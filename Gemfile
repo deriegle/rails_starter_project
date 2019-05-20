@@ -11,6 +11,7 @@ gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.7'
 gem 'http'
 gem 'bcrypt', '~> 3.1.7'
+gem 'jwt', '~> 2.1.0'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.8'

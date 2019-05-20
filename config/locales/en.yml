@@ -1,0 +1,15 @@
+en:
+  menu_item:
+    not_found: "*Could not find the lunch for that date.*"
+    restaurants:
+      - "Clustertruck"
+      - "Condado's"
+      - "Subway"
+      - "Dirty Frank's"
+      - "Burgerim"
+      - "Little Palace"
+      - "Hadley's Bar + Kitchen"
+      - "Mikey's Late Night Slice"
+      - "Pecan Penny's"
+      - "The Walrus"
+      - "Tio's Tacos"

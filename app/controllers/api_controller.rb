@@ -9,11 +9,13 @@ class ApiController < ApplicationController
 
   private
 
+  def _unauthorized
+    render :json => { :error => 'Not Authorized' }, :status => :unauthorized
+  end
+
   def _authenticate_request
     @current_user = AuthenticationService.user_if_authorized(request.headers)
 
-    render :json => {
-      :error => 'Not Authorized'
-    }, :status => :unauthorized unless @current_user
+    return _unauthorized unless @current_user
   end
 end

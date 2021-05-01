@@ -11,7 +11,7 @@ class AuthenticationService
   end
 
   def self.user_if_authorized(headers)
-    token = headers['Authorization']
+    token = headers&.fetch("Authorization", nil)
     return unless token.present?
 
     decoded_token = JwtService.decode(token)

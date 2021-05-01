@@ -1,6 +1,6 @@
-require 'rails_helper'
+require "rails_helper"
 
-RSpec.describe ApiController, type: :controller do
+RSpec.describe Api::V1::StatusController, type: :controller do
   describe "#status_check" do
     it "is ok" do
       get :status_check

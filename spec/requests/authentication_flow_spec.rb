@@ -2,6 +2,11 @@ require "rails_helper"
 
 RSpec.describe "Authentication Flow" do
   it "allows user to register and sign in" do
+    # Cannot access until authenticated
+    get "/api/v1/secret"
+
+    expect(response).to have_http_status(:unauthorized)
+
     post "/api/v1/authentication/register", :params => {
       :user => {
         :name => "Fake User",
@@ -36,5 +41,12 @@ RSpec.describe "Authentication Flow" do
 
     expect(response).to have_http_status(:ok)
     expect(json_body["token"]).not_to be_nil
+
+    get "/api/v1/secret", :headers => {
+      :Authorization => json_body["token"]
+    }
+
+    expect(response).to have_http_status(:ok)
+    expect(json_body["user"]).not_to be_nil
   end
 end

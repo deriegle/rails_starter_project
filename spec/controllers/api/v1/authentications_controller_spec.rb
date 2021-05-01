@@ -59,7 +59,7 @@ RSpec.describe Api::V1::AuthenticationsController, type: :controller do
     end
 
     context "with valid params" do
-      let(:name) { nil }
+      let(:name) { "abcde" }
       let(:password) { Faker::Internet.password }
       let(:email) { Faker::Internet.email }
 

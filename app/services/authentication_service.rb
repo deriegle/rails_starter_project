@@ -15,6 +15,8 @@ class AuthenticationService
     return unless token.present?
 
     decoded_token = JwtService.decode(token)
+    return unless decoded_token
+
     User.find_by(:id => decoded_token[:user_id])
   end
 end

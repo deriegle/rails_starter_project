@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Api::AuthenticationController, type: :controller do
+RSpec.describe Api::V1::AuthenticationsController, type: :controller do
   describe "#authenticate" do
     let(:user) { create(:user) }
     let(:email) { user.email }

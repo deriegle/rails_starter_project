@@ -2,8 +2,10 @@ require "rails_helper"
 
 RSpec.describe "Authentication Flow" do
   it "allows user to register and sign in" do
-    # Cannot access until authenticated
-    get "/api/v1/secret"
+    # Cannot access until properly authenticated
+    get "/api/v1/secret", :params => {
+      :Authorization => "Fake-Invalid-Token"
+    }
 
     expect(response).to have_http_status(:unauthorized)
 
@@ -42,6 +44,7 @@ RSpec.describe "Authentication Flow" do
     expect(response).to have_http_status(:ok)
     expect(json_body["token"]).not_to be_nil
 
+    # Secret route that requires authentication can be accessed with the token
     get "/api/v1/secret", :headers => {
       :Authorization => json_body["token"]
     }

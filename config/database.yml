@@ -3,24 +3,25 @@ default: &default
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
+# Shared between development & test environments
+local: &local
+  username: <%= ENV["DATABASE_USERNAME"] %>
+  password: <%= ENV["DATABASE_PASSWORD"] %>
+  host: <%= ENV["DATABASE_HOST"] || "localhost" %>
+  port: <%= ENV["DATABASE_PORT"] || "5432" %>
+
 development:
   <<: *default
+  <<: *local
   database: rails_api_starter_development
-  username: "root"
-  password: "root"
-  host: "localhost"
-  port: "5432"
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
+  <<: *local
   database: rails_api_starter_test
-  username: "root"
-  password: "root"
-  host: "localhost"
-  port: "5432"
 
 production:
   <<: *default

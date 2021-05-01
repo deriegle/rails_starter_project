@@ -5,8 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-
-gem 'rails', '~> 5.1.6', '>= 5.1.6.1'
+gem 'rails', '~> 6.1.3'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.7'
 gem 'http'
@@ -22,7 +21,6 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'shoulda-matchers'
   gem 'rails-controller-testing'
-  gem 'active_model_serializers', '~> 0.10'
   gem 'dotenv-rails'
   gem 'timecop'
 end

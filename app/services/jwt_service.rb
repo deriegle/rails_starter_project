@@ -6,8 +6,8 @@ class JwtService
   end
 
   def self.decode(token)
-    body = JWT.decode(token, Rails.application.secrets.secret_key_base).first
-    HashWithIndifferentAccess.new(body)
+    payload = JWT.decode(token, Rails.application.secrets.secret_key_base).first
+    payload.with_indifferent_access
   rescue
     nil
   end

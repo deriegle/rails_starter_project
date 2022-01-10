@@ -7,7 +7,7 @@ end
 
 gem 'rails', '~> 6.1.3'
 gem 'pg', '>= 0.18', '< 2.0'
-gem 'puma', '~> 3.7'
+gem 'puma', '~> 5.0'
 gem 'http'
 gem 'bcrypt', '~> 3.1.7'
 gem 'jwt', '~> 2.1.0'

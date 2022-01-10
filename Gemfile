@@ -14,7 +14,7 @@ gem 'jwt', '~> 2.1.0'
 gem 'sidekiq', '~> 6.0.0'
 
 group :development, :test do
-  gem 'rspec-rails', '~> 3.8'
+  gem 'rspec-rails', '~> 5.0'
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'pry-rails'
